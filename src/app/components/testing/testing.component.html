@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<mat-paginator [length]="products.length" [pageSizeOptions]="pageSizeOptions" (page)="onPageChange($event)">
+</mat-paginator>
+<div class="justify-content-center">
+<mat-grid-list cols="5" rowHeight="2:2">
+  <mat-grid-tile
+  *ngFor="let product of products | slice: (currentPage - 1) * itemsPerPage : currentPage * itemsPerPage">
+  <ul>
+    <p><img [src]="product.producturl" /></p>
+    <p>name: {{ product.productname }}</p>
+    <p>rating: {{ product.productrating }}/5</p>
+    <p>price: {{ product.productprice | currency:'INR'}}</p>
+    <button class="btn btn-dark btn-sm" (click)="openpop(product)" >Add to cart</button>
+  </ul>
+  </mat-grid-tile>
+</mat-grid-list>
+</div>

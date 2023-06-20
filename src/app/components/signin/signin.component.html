@@ -1,0 +1,67 @@
+<!-- <div class="container col-md-6 offset-md-3">
+    <div class="form-area">
+        <h2 style="text-align: center;">SIGNIN</h2>
+        <form class="form-group" (ngSubmit)="check()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" 
+                [(ngModel)]="name" required placeholder="enter name here"
+                name="name">
+            </div>
+
+            <div class="form-group">
+                <label>password</label>
+                <input type="password" class="form-control" 
+                [(ngModel)]="password" required placeholder="enter password here"
+                name="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">signin</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container col-md-6 offset-md-3">
+    <h3>Don't have account click here</h3>
+    <button class="btn btn-primary" routerLink="/register">Signup here!</button>
+</div> -->
+
+
+<div class="container col-md-4 offset-md-4">
+    <mat-card class="card">
+    <h2 style="text-align: center;">Customer Login <img mat-card-avatar src="https://icons.iconarchive.com/icons/iconsmind/outline/256/User-icon.png">
+    </h2>
+    <div class="form">
+        <form [formGroup]="frm" (ngSubmit)="check()">
+            <div>
+                <label>Username</label>
+                <input type="text" placeholder="enter username-ID" 
+                class="form-control" formControlName="name"
+                [ngClass]="{'is-invalid':name.touched && name.invalid}" >
+                <div>
+                    <div class="alert alert-danger" *ngIf="name.touched && name.invalid">name is required</div>
+                </div>
+            </div>
+            <br>    
+            <div>
+                <label>password</label>
+                <input type="password" placeholder="********" formControlName="password" 
+                class="form-control" [ngClass]="{'is-invalid':password.touched && password.invalid}">
+                <div class="alert alert-danger" *ngIf="password.touched && password.invalid">password is required</div>
+            </div>
+            <br>    
+
+            <div>
+                <button type="submit" class="btn btn-dark" >Submit</button>
+            </div>
+        </form>
+        <br>    
+
+        <div>
+            <h3 style="text-align: center;">Don't have account register here <button class="btn btn-dark" [routerLink]="['/register']">Signup</button></h3>
+        </div>
+    </div>
+</mat-card>
+</div>
+
+

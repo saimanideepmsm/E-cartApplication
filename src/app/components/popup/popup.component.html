@@ -1,0 +1,26 @@
+<mat-card>
+<header><h1 style="text-align: center;">Enter quantity</h1></header>
+<mat-dialog-content>
+    <table class="center-table table-spacing">
+        <thead>
+          <th>Name</th>
+          <th>Rating</th>
+          <th>Price</th>
+        </thead>
+        <tbody>
+            <td>{{product.productname}}</td>
+            <td>{{product.productrating}}</td>
+            <td>{{product.productprice}}</td>
+        </tbody>
+    </table>
+        <div><img [src]="product.producturl"/></div>
+    <mat-form-field>
+        <input matInput type="number" required [(ngModel)]="quantity">
+    </mat-form-field>
+
+<mat-dialog-actions>
+    <button class="btn btn-success" (click)="save()">save</button>
+    <button class="btn btn-danger" mat-dialog-close>cancel</button>
+</mat-dialog-actions>
+</mat-dialog-content>
+</mat-card>

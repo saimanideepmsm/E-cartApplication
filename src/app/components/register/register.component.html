@@ -1,0 +1,47 @@
+
+<div class="container col-md-4 offset-md-4">
+    <mat-card class="card">
+    <h2 style="text-align: center;">Customer register</h2>
+    <div class="form">
+        <form [formGroup]="frm" (ngSubmit)="register()">
+            <div>
+                <label>Name</label>
+                <input type="text" placeholder="enter username-ID" 
+                class="form-control" formControlName="name"
+                [ngClass]="{'is-invalid':name.touched && name.invalid}" >
+                <div>
+                    <div class="alert alert-danger" *ngIf="name.touched && name.invalid">name is required</div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label>Phone Number</label>
+                <input type="text" placeholder="phone" formControlName="phone" 
+                class="form-control" [ngClass]="{'is-invalid':phone.touched && phone.invalid}">
+                <div class="alert alert-danger" *ngIf="phone.touched && phone.invalid">password is required</div>
+            </div>
+            <br>
+
+            <div>
+                <label>Password</label>
+                <input type="password" placeholder="password" formControlName="password1" 
+                class="form-control" [ngClass]="{'is-invalid':password1.touched && password1.invalid}">
+                <div class="alert alert-danger" *ngIf="password1.touched && password1.invalid">password is required</div>
+            </div>
+            <br>
+
+            <div>
+                <label>Confirm Password</label>
+                <input type="password" placeholder="re-password" formControlName="password2" 
+                class="form-control" [ngClass]="{'is-invalid':password2.touched && password2.invalid}">
+                <div class="alert alert-danger" *ngIf="password2.touched && password2.invalid">password is required</div>
+            </div>
+            <br>
+
+            <div>
+                <button type="submit" class="btn btn-dark" [disabled]="frm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</mat-card>
+</div>

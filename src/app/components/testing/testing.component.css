@@ -1,0 +1,34 @@
+/* 
+ .center-table
+ {
+  margin: 0 auto;
+  width :100%;
+ }
+ .center-table td
+ {
+  width :auto;
+ }
+ .table-spacing tr{
+  margin-bottom: 10px;
+ }
+ img{
+    width: 150px;
+    height: 100px;
+} */
+
+img{
+    width: 200px;
+    height: 150px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+
+  mat-grid-tile {
+    background: rgb(247, 241, 241);
+  }
